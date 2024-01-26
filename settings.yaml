@@ -1,0 +1,40 @@
+DubinsCar:
+  --env: DubinsCar
+  --lr-actor: 3e-5
+  --lr-cbf: 3e-5
+  --loss-action-coef: 1e-5
+  --n-env-train: 16
+  --horizon: 32
+  --area-size: 4
+DoubleIntegrator:
+  --env: DoubleIntegrator
+  --lr-actor: 1e-5
+  --lr-cbf: 1e-5
+  --loss-action-coef: 1e-4
+  --n-env-train: 16
+  --horizon: 32
+  --area-size: 4
+SingleIntegrator:
+  --env: SingleIntegrator
+  --lr-actor: 1e-5
+  --lr-cbf: 1e-5
+  --loss-action-coef: 1e-4
+  --n-env-train: 16
+  --horizon: 1
+  --area-size: 4
+LinearDrone:
+  --env: LinearDrone
+  --lr-actor: 1e-5
+  --lr-cbf: 1e-5
+  --loss-action-coef: 1e-3
+  --n-env-train: 16
+  --horizon: 32
+  --area-size: 2
+CrazyFlie:
+  --env: CrazyFlie
+  --lr-actor: 1e-5
+  --lr-cbf: 1e-4
+  --loss-action-coef: 3e-5
+  --n-env-train: 16
+  --horizon: 32
+  --area-size: 2

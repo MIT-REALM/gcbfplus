@@ -1,0 +1,24 @@
+flax>=0.7.2
+jax>=0.4.14
+jraph>=0.0.6.dev0
+jaxtyping>=0.2.21
+numpy>=1.25.2
+einops>=0.6.1
+matplotlib>=3.7.2
+opencv-python>=4.8.0.76
+tqdm>=4.66.1
+tensorflow-probability>=0.21.0
+optax>=0.1.7
+scipy>=1.11.2
+wandb>=0.15.8
+pyyaml>=6.0.1
+orbax_checkpoint>=0.3.5
+seaborn>=0.12.2
+equinox>=0.11.0
+loguru>=0.7.2
+attrs>=23.1.0
+rich>=13.5.3
+ipdb>=0.13.13
+colour>=0.1.5
+control>=0.9.4
+jaxproxqp @ git+https://github.com/oswinso/jaxproxqp.git
