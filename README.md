@@ -125,4 +125,9 @@ python test.py --env SingleIntegrator -n 16 --algo dec_share_cbf --epi 1 --area-
 ```
 
 ### Pre-trained models
+
 We provide the pre-trained models in the folder [`pretrained`](pretrained).
+
+## Acknowledgement
+
+The developers were partially supported by MITRE during the project.
