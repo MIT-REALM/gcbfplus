@@ -131,3 +131,6 @@ We provide the pre-trained models in the folder [`pretrained`](pretrained).
 ## Acknowledgement
 
 The developers were partially supported by MITRE during the project.
+
+© 2024 MIT
+© 2024 The MITRE Corporation
