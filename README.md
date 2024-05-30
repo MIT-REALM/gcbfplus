@@ -46,7 +46,7 @@ To reproduce the results shown in our paper, one can refer to [`settings.yaml`](
 To train the model (only GCBF+ and GCBF need training), use:
 
 ```bash
-python train.py --algo gcbf+ --env DoubleIntegrator -n 8 --area-size 4 --loss-action-coef 1e-4 --n-env-train 16 --lr-actor: 1e-5 --lr-cbf: 1e-5 --horizon: 32
+python train.py --algo gcbf+ --env DoubleIntegrator -n 8 --area-size 4 --loss-action-coef 1e-4 --n-env-train 16 --lr-actor 1e-5 --lr-cbf 1e-5 --horizon 32
 ```
 
 In our paper, we use 8 agents with 1000 training steps. The training logs will be saved in folder `./logs/<env>/<algo>/seed<seed>_<training-start-time>`. We also provide the following flags:
