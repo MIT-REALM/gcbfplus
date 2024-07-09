@@ -141,7 +141,7 @@ class CustomTimeElapsedColumn(ProgressColumn):
 def save_anim(ani: FuncAnimation, path: pathlib.Path):
     pbar = Progress(*Progress.get_default_columns(), CustomTimeElapsedColumn())
     pbar.start()
-    task = pbar.add_task("Animating", total=ani.save_count)
+    task = pbar.add_task("Animating", total=ani._save_count)
 
     def progress_callback(curr_frame: int, total_frames: int):
         pbar.update(task, advance=1)
