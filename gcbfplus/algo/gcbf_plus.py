@@ -233,8 +233,13 @@ class GCBFPlus(GCBF):
         if self.buffer.length > self.batch_size:
             # sample from memory
             memory, safe_mask_memory, unsafe_mask_memory = self.buffer.sample(rollout.length)
-            unsafe_memory, safe_mask_unsafe_memory, unsafe_mask_unsafe_memory = self.unsafe_buffer.sample(
-                rollout.length * rollout.time_horizon)
+            try:
+                unsafe_memory, safe_mask_unsafe_memory, unsafe_mask_unsafe_memory = self.unsafe_buffer.sample(
+                    rollout.length * rollout.time_horizon)
+            except ValueError:
+                unsafe_memory = jtu.tree_map(lambda x: merge01(x), memory)
+                safe_mask_unsafe_memory = merge01(safe_mask_memory)
+                unsafe_mask_unsafe_memory = merge01(unsafe_mask_memory)
 
             # append new data to memory
             self.buffer.append(rollout, safe_mask, unsafe_mask)
