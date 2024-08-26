@@ -366,7 +366,7 @@ class GCBFPlus(GCBF):
                 cbf_fn = jax_vmap(ft.partial(self.cbf.get_cbf, cbf_params))
                 cbf_fn_no_grad = jax_vmap(ft.partial(self.cbf.get_cbf, jax.lax.stop_gradient(cbf_params)))
                 # (minibatch_size, n_agents)
-                h = cbf_fn(minibatch.graph).squeeze()
+                h = cbf_fn(minibatch.graph).squeeze(-1)
                 # (minibatch_size * n_agents,)
                 h = merge01(h)
 
@@ -392,12 +392,12 @@ class GCBFPlus(GCBF):
                 # get next graph
                 forward_fn = jax_vmap(self._env.forward_graph)
                 next_graph = forward_fn(minibatch.graph, action)
-                h_next = merge01(cbf_fn(next_graph).squeeze())
+                h_next = merge01(cbf_fn(next_graph).squeeze(-1))
                 h_dot = (h_next - h) / self._env.dt
 
                 # stop gradient and get next graph
                 h_no_grad = jax.lax.stop_gradient(h)
-                h_next_no_grad = merge01(cbf_fn_no_grad(next_graph).squeeze())
+                h_next_no_grad = merge01(cbf_fn_no_grad(next_graph).squeeze(-1))
                 h_dot_no_grad = (h_next_no_grad - h_no_grad) / self._env.dt
 
                 # h_dot + alpha * h > 0 (backpropagate to action, and backpropagate to h when labeled)
