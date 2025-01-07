@@ -2,7 +2,7 @@
 
 # GCBF+
 
-Jax Official Implementation of T-RO Paper: [S Zhang*](https://syzhang092218-source.github.io), [Oswin So*](https://oswinso.xyz/), [K Garg](https://kunalgarg.mit.edu/), [C Fan](https://chuchu.mit.edu): "[GCBF+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multi-Agent Control](https://mit-realm.github.io/gcbfplus-website/)". 
+Jax Official Implementation of T-RO Paper: [Songyuan Zhang*](https://syzhang092218-source.github.io), [Oswin So*](https://oswinso.xyz/), [Kunal Garg](https://kunalgarg.mit.edu/), and [Chuchu Fan](https://chuchu.mit.edu): "[GCBF+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multi-Agent Control](https://mit-realm.github.io/gcbfplus-website/)". 
 
 [Dependencies](#Dependencies) •
 [Installation](#Installation) •
