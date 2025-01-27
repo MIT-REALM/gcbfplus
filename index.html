@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="GCBF+">
+  <meta name="keywords" content="Multi-agent systems; Distributed control; Safe control; Control barrier functions; Graph neural networks">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GCBF+</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.png"> -->
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg" />
+  <link rel="icon" type="image/png" href="./static/images/favicon.png" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <!-- <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://syzhang092218-source.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://realm.mit.edu">
+            REALM Website
+          </a>
+          <a class="navbar-item" href="https://mit-realm.github.io/neuriss-website/">
+            NeurISS: Learning stabilizing controllers for networked dynamical systems
+          </a>
+          <a class="navbar-item" href="https://mit-realm.github.io/gcbf-website/">
+            GCBFv0: Neural Graph Control Barrier Functions for Distributed Safe Multi-agent Control
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2311.13714">
+            Survey: Learning Safe Control for Multi-Robot Systems: Methods, Verification, and Open Challenges
+          </a>
+        </div>
+        <!-- <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://mit-realm.github.io/gcbf-website/">
+            GCBFv0
+          </a>
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GCBF+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multi-Agent Control</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://syzhang092218-source.github.io/">Songyuan Zhang*</a>,</span>
+              <span class="author-block">
+                <a href="https://oswinso.xyz/">Oswin So*</a>,</span>
+            <span class="author-block">
+              <a href="https://kunalgarg.mit.edu/">Kunal Garg</a>,</span>
+            <span class="author-block">
+              <a href="http://chuchu.mit.edu/">Chuchu Fan</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Massachusetts Institute of Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2401.14554.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2401.14554"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://youtu.be/TODO"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Supplementary Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://youtu.be/TODO"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Presentation Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/MIT-REALM/gcbfplus/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="hero-body">
+        <center>
+          <img width=24% src="./figs/cf_swap8_overlay.jpg"
+          alt="Swapping task for the Crazyflie drone platform using GCBF+"/>
+          <img width=24% src="./figs/cf6_static_obs.png"
+          alt="Swapping task for the Crazyflie drone platform using GCBF+"/>
+          <img width=24% src="./figs/cf_atk6_overlay.jpg"
+          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/>
+          <img width=24% src="./figs/cf_dock6_overlay.jpg"
+          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/>
+        </center>
+      </div>
+      <div class="hero-body">
+        <h2 class="title is-4">Crazyflies switching positions using GCBF+</h2>
+        <center>
+          <img width=45.305% src="./figs/switch.jpg"
+          alt="Swapping task for the Crazyflie drone platform using GCBF+"/>
+          <!-- <img width=40% src="./figs/cf_swap8_overlay.jpg"
+          alt="Swapping task for the Crazyflie drone platform using GCBF+"/> -->
+          <video width="53.695%" autoplay="" muted="" loop="">
+            <source src="videos/swap.mp4" type="video/mp4">
+          </video>
+        </center>
+      </div>
+      <div class="hero-body">
+        <h2 class="title is-4">Crazyflies switching positions with static obstacles using GCBF+</h2>
+        <center>
+          <img width=45.305% src="./figs/static_obs.jpg"
+          alt="Swapping task for the Crazyflie drone platform using GCBF+"/>
+          <!-- <img width=20% src="./figs/cf_swap8_overlay.jpg"
+          alt="Swapping task for the Crazyflie drone platform using GCBF+"/> -->
+          <video width="53.695%" autoplay="" muted="" loop="">
+            <source src="videos/static_obs.mp4" type="video/mp4">
+          </video>
+        </center>
+      </div>
+      <div class="hero-body">
+        <h2 class="title is-4">Crazyflies switching positions with a moving obstacle using GCBF+</h2>
+        <center>
+          <img width=45.305% src="./figs/move_obs.jpg"
+          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/>
+          <!-- <img width=40% src="./figs/cf_atk6_overlay.jpg"
+          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/> -->
+          <video width="53.695%" autoplay="" muted="" loop="">
+            <source src="videos/attacker.mp4" type="video/mp4">
+          </video>
+        </center>
+      </div>
+      <div class="hero-body">
+        <h2 class="title is-4">Crazyflies docking using GCBF+</h2>
+        <center>
+          <img width=45.305% src="./figs/docking.jpg"
+          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/>
+          <!-- <img width=40% src="./figs/cf_dock6_overlay.jpg"
+          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/> -->
+          <video width="53.695%" autoplay="" muted="" loop="">
+            <source src="videos/docking.mp4" type="video/mp4">
+          </video>
+        </center>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/TODO?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Distributed, scalable, and safe control of large-scale multi-agent systems is a challenging problem. In this paper, we design a distributed framework for safe multi-agent control in large-scale environments with obstacles, where a large number of agents are required to maintain safety using only local information and reach their goal locations. We introduce a new class of certificates, termed graph control barrier function (GCBF), which are based on the well-established control barrier function theory for safety guarantees and utilize a graph structure for scalable and generalizable distributed control of MAS. We develop a novel theoretical framework to prove the safety of an arbitrary-sized MAS with a single GCBF. We propose a new training framework GCBF+ that uses graph neural networks to parameterize a candidate GCBF and a distributed control policy. The proposed framework is distributed and is capable of taking point clouds from LiDAR, instead of actual state information, for real-world robotic applications. We illustrate the efficacy of the proposed method through various hardware experiments on a swarm of drones with objectives ranging from exchanging positions to docking on a moving target without collision. Additionally, we perform extensive numerical experiments, where the number and density of agents, as well as the number of obstacles, increase. Empirical results show that in complex environments with agents with nonlinear dynamics (e.g., Crazyflie drones), GCBF+ outperforms the hand-crafted CBF-based method with the best performance by up to \(20\%\) for relatively small-scale MAS with up to 256 agents, and leading reinforcement learning (RL) methods by up to \(40\%\) for MAS with 1024 agents. Furthermore, the proposed method does not compromise on the performance, in terms of goal reaching, for achieving high safety rates, which is a common trade-off in RL-based methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  
+  <div class="container is-max-desktop">
+    <!-- Main point 1 -->
+    <div class="column">
+      <h2 class="title is-3">Simulations</h2>
+      <div class="content">
+        <div class="content has-text-justified">
+          <b>
+            GCBF+ controller in the DoubleIntegrator environment trained with 8 agents and tested with 64/128/512 agents
+          </b>
+          <center>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/DoubleIntegrator_64.mp4" type="video/mp4">
+            </video>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/DoubleIntegrator_128.mp4" type="video/mp4">
+            </video>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/DoubleIntegrator_512_2x.mp4" type="video/mp4">
+            </video>
+          </center>
+          <b> 
+            GCBF+ controller with 2D obstacles and 32/64/512 agents
+          </b>
+          <center>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/Obstacle2D_32.mp4" type="video/mp4">
+            </video>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/Obstacle2D_64.mp4" type="video/mp4">
+            </video>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/Obstacle2D_512_2x.mp4" type="video/mp4">
+            </video>
+          </center>
+          <b> 
+            GCBF+ controller with 3D obstacles and 64/128/512 agents
+          </b>
+          <center>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/Obstacle3D_64.mp4" type="video/mp4">
+            </video>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/Obstacle3D_128.mp4" type="video/mp4">
+            </video>
+            <video width="33%" autoplay="" muted="" loop="">
+              <source src="videos/Obstacle3D_512.mp4" type="video/mp4">
+            </video>
+          </center>
+        </div>
+      </div>
+    </div>
+    <!--/ Main point 1 -->
+
+    <h2 class="title is-3">GCBF: safety certificate for arbitrary-sized MAS</h2>
+    <div class="column">
+      <div class="columns is-centered">
+        <img src="figs/teaser.png"
+          class="center-image"
+          style="padding: 0px 50px 0px 0px; max-width: 50%;"
+          alt="attention"/>
+          <p>
+            <br>
+            MAS can be naturally viewed as graphs and we define GCBF as a function of only neighboring nodes. <br><br>
+            Assume: <br>
+            1. For given agent \(i\), a neighboring node \(j\) where \(\|p_i - p_j\| \geq R\) does not affect the GCBF value. <br>
+            2. The 0-superlevel set of the GCBF is a subset of the safe set. <br>
+            <br>
+            Then, GCBF certifies the safety of an <b>arbitrary-sized</b> MAS.
+          </p>
+      </div>
+    </div>
+
+    <!-- Main point 2 -->
+    <div class="column"></div>
+    <h2 class="title is-3">GCBF+ training architecture</h2>
+    <div class="column">
+      <div class="content">
+        <img src="figs/train.png"
+          class="center-image"
+          width="100%"
+          alt="algorithm structure"/>
+      </div>
+    </div>
+    <p>
+      The sampled input features are labeled as safe control invariant \(\mathcal D_{\mathcal C}\) and unsafe \(\mathcal D_{\mathcal A}\) using the previous step learned control policy \(\pi_\phi\) for training. A nominal control policy \(\pi_{\mathrm{nom}}\) for goal reaching is used in a CBF-QP with the previously learned GCBF \(h_\theta\) to generate \(\pi_{\mathrm{QP}}\). Finally, the QP policy along with the CBF conditions are used to define the loss \(\mathcal L\).
+    </p>
+    <center>
+      <img src="figs/cbf.png"
+      width="50%"
+      alt="algorithm structure"/>
+      <video width="40%" autoplay="" muted="" loop="">
+        <source src="videos/cbf.mp4" type="video/mp4">
+      </video>
+    </center>
+    <!-- <img src="figs/cbf.mp4"
+      class="center-image"
+      width="40%"
+      alt="algorithm structure"/> -->
+    <p align="center">
+      The learned CBF contour.
+    </p>
+    <!--/ Main point 2 -->
+
+    <div class="column"></div>
+    <h2 class="title is-3">An improved loss design compared with <a href="https://mit-realm.github.io/gcbf-website/">GCBFv0</a>.</h2>
+    <p>
+      GCBF+ uses an improved loss compared with GCBFv0 so that <b>safety does not compete with goal-reaching</b> in the loss. In the following figures, the orange arrows show the learned controls and the black arrows show the reference controls (\(u_\mathrm{nom}\) for GCBFv0 and \(u_\mathrm{QP}\) for GCBF+). 
+    </p>
+    <div class="column">
+      <div class="columns is-centered">
+        <img src="figs/control_loss_tikz.png"
+          class="center-image"
+          style="padding: 10px 50px 0px 0px; max-width: 50%;"
+          alt="control loss"/>
+          <p>
+            <br>
+            For GCBFv0 loss:<br>
+            &bull; Using small \(\eta_\mathrm{ctrl}\), the training focuses more on safety, and the learned controller cannot reach the goal.<br>
+            &bull; Using large \(\eta_\mathrm{ctrl}\), the training focuses more on behavior cloning the nominal controller, leading to unsafe behavior.<br>
+            &bull; Only when using the fine-tuned \(\eta_\mathrm{ctrl}\) can the learned controller be both safe and goal-reaching. However, the training loss still cannot be zero in this case. <br>
+            <br>
+            For GCBF+ loss:<br>
+            \(\pi_\phi\) is not sensitive to \(\eta_\mathrm{ctrl}\), and the learned control aligns much better with the guided signal, meaning that theoretically the loss can go to zero. 
+          </p>
+      </div>
+    </div>
+
+    <div class="column"></div>
+    <h2 class="title is-3">Using attention to satisfy GCBF assumptions</h2>
+    <div class="column">
+      <div class="columns is-centered">
+        <img src="figs/attn-dist.png"
+          class="center-image"
+          style="padding: 0px 50px 0px 0px; max-width: 50%;"
+          alt="attention"/>
+          <p>
+            To certify safety, GCBF needs the assumption that for given agent \(i\), a neighboring node \(j\) where \(\|p_i - p_j\| \geq R\) does not affect the GCBF value. To satisfy the assumption, we apply GNN and graph attention to GCBF \(h\), such that:<br>
+            \(h_\theta(z_i) = \psi_{\theta_4}\left(\sum_{j\in\tilde{\mathcal{N}}_i} \underbrace{\mathrm{softmax}\big( \psi_{\theta_2}(q_{ij}) \big)}_{w_{ij}}\, \psi_{\theta_3}(q_{ij})\right)\)<br>
+            where \(q_{ij} = \psi_{\theta_1}(z_{ij})\) is the encoding.  The weight \(w_{ij}\) approaches \(0\) as the inter-agent distance \(d_{ij}\) approaches \(R\) without explicit supervision, showing that GCBF+ automatically learns to satisfy the assumption. 
+          </p>
+      </div>
+    </div>
+
+    <!-- Main point 3 -->
+    <div class="column"></div>
+    <h2 class="title is-3">Numerical Results</h2>
+    <div class="column">
+      <div class="content">
+        <img src="figs/env2d.png"
+          class="center-image"
+          width="100%"
+          alt="algorithm structure"/>
+      </div>
+      <div class="content">
+        <img src="figs/env3d.png"
+          class="center-image"
+          width="100%"
+          alt="algorithm structure"/>
+      </div>
+      <div class="content">
+        <img src="figs/obs.png"
+          class="center-image"
+          width="100%"
+          alt="algorithm structure"/>
+      </div>
+      <p align="center">
+        The performance of GCBF+ and the baselines in 2D and 3D environments and environments with obstacles. 
+      </p>
+    </div>
+    <p>
+      GCBF+ outperforms the baselines across all the environments because it <b>is guided by a learned GCBF</b>, <b>does not need to balance safety and performance in training</b> and <b>can work with actuator limits</b>.
+    </p>
+    <!--/ Main point 3 -->
+
+
+  <!-- Concurrent Work. -->
+  <div class="column"></div>
+  <h2 class="title is-3">Related Work</h2>
+  <div class="column">
+    <div class="content">
+      <div class="content has-text-justified">
+        <p>
+          This work improves on our previous work <a href="https://mit-realm.github.io/gcbf-website/">GCBFv0</a>.
+
+          For a survey of the field of learning safe control for multi-robot systems, see <a rel="survey" href="https://arxiv.org/pdf/2311.13714.pdf">this paper</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--/ Concurrent Work. -->
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{TODO,
+author={TODO, TODO and TODO, TODO},
+journal={TODO},
+title={TODO},
+year={TODO},
+volume={TODO},
+number={TODO},
+pages={TODO},
+doi={TODO}}
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is based that used by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
