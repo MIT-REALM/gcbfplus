@@ -18,6 +18,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="icon" href="./static/images/favicon.png"> -->
   <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg" />
   <link rel="icon" type="image/png" href="./static/images/favicon.png" />
@@ -52,17 +53,20 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://realm.mit.edu">
-            REALM Website
-          </a>
-          <a class="navbar-item" href="https://mit-realm.github.io/neuriss-website/">
-            NeurISS: Learning stabilizing controllers for networked dynamical systems
+          <a class="navbar-item" href="https://mit-realm.github.io/dgppo/">
+            DGPPO: Discrete GCBF Proximal Policy Optimization for Multi-agent Safe Optimal Control
           </a>
           <a class="navbar-item" href="https://mit-realm.github.io/gcbf-website/">
             GCBFv0: Neural Graph Control Barrier Functions for Distributed Safe Multi-agent Control
           </a>
           <a class="navbar-item" href="https://arxiv.org/abs/2311.13714">
             Survey: Learning Safe Control for Multi-Robot Systems: Methods, Verification, and Open Challenges
+          </a>
+          <a class="navbar-item" href="https://mit-realm.github.io/neuriss-website/">
+            NeurISS: Learning stabilizing controllers for networked dynamical systems
+          </a>
+          <a class="navbar-item" href="https://realm.mit.edu">
+            REALM Website
           </a>
         </div>
         <!-- <div class="navbar-dropdown">
@@ -148,6 +152,15 @@
                   <span>Code</span>
                   </a>
               </span>
+              <span class="link-block">
+                <a href="https://news.mit.edu/2025/mit-engineers-help-multirobot-systems-stay-safety-zone-0131"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-newspaper"></i>
+                  </span>
+                  <span>MIT News</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -162,26 +175,25 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
+      <h2 class="title is-3"><center>Generalizable distributed safe controllers for 1000+ agents.</center></h2>
       <div class="hero-body">
         <center>
           <img width=24% src="./figs/cf_swap8_overlay.jpg"
-          alt="Swapping task for the Crazyflie drone platform using GCBF+"/>
+          alt="8 Crazyflies swapping"/>
           <img width=24% src="./figs/cf6_static_obs.png"
-          alt="Swapping task for the Crazyflie drone platform using GCBF+"/>
+          alt="6 Crazyflies swapping with static obstacles"/>
           <img width=24% src="./figs/cf_atk6_overlay.jpg"
-          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/>
+          alt="6 Crazyflies swapping with a moving obstacle"/>
           <img width=24% src="./figs/cf_dock6_overlay.jpg"
-          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/>
+          alt="4 Crazyflies swapping and docking on moving targets"/>
         </center>
       </div>
       <div class="hero-body">
         <h2 class="title is-4">Crazyflies switching positions using GCBF+</h2>
         <center>
           <img width=45.305% src="./figs/switch.jpg"
-          alt="Swapping task for the Crazyflie drone platform using GCBF+"/>
-          <!-- <img width=40% src="./figs/cf_swap8_overlay.jpg"
-          alt="Swapping task for the Crazyflie drone platform using GCBF+"/> -->
-          <video width="53.695%" autoplay="" muted="" loop="">
+          alt="Crazyflies switching positions using GCBF+"/>
+          <video width="53.695%" autoplay="" muted="" loop="" controls>
             <source src="videos/swap.mp4" type="video/mp4">
           </video>
         </center>
@@ -190,10 +202,8 @@
         <h2 class="title is-4">Crazyflies switching positions with static obstacles using GCBF+</h2>
         <center>
           <img width=45.305% src="./figs/static_obs.jpg"
-          alt="Swapping task for the Crazyflie drone platform using GCBF+"/>
-          <!-- <img width=20% src="./figs/cf_swap8_overlay.jpg"
-          alt="Swapping task for the Crazyflie drone platform using GCBF+"/> -->
-          <video width="53.695%" autoplay="" muted="" loop="">
+          alt="Crazyflies switching positions with static obstacles using GCBF+"/>
+          <video width="53.695%" autoplay="" muted="" loop="" controls>
             <source src="videos/static_obs.mp4" type="video/mp4">
           </video>
         </center>
@@ -202,10 +212,8 @@
         <h2 class="title is-4">Crazyflies switching positions with a moving obstacle using GCBF+</h2>
         <center>
           <img width=45.305% src="./figs/move_obs.jpg"
-          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/>
-          <!-- <img width=40% src="./figs/cf_atk6_overlay.jpg"
-          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/> -->
-          <video width="53.695%" autoplay="" muted="" loop="">
+          alt="Crazyflies switching positions with a moving obstacle using GCBF+"/>
+          <video width="53.695%" autoplay="" muted="" loop="" controls>
             <source src="videos/attacker.mp4" type="video/mp4">
           </video>
         </center>
@@ -214,10 +222,8 @@
         <h2 class="title is-4">Crazyflies docking using GCBF+</h2>
         <center>
           <img width=45.305% src="./figs/docking.jpg"
-          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/>
-          <!-- <img width=40% src="./figs/cf_dock6_overlay.jpg"
-          alt="Swapping with a moving obstacle for the Crazyflie drone platform using GCBF+"/> -->
-          <video width="53.695%" autoplay="" muted="" loop="">
+          alt="Crazyflies docking using GCBF+"/>
+          <video width="53.695%" autoplay="" muted="" loop="" controls>
             <source src="videos/docking.mp4" type="video/mp4">
           </video>
         </center>
@@ -317,7 +323,7 @@
         <img src="figs/teaser.png"
           class="center-image"
           style="padding: 0px 50px 0px 0px; max-width: 50%;"
-          alt="attention"/>
+          alt="GCBF contour plot"/>
           <p>
             <br>
             MAS can be naturally viewed as graphs and we define GCBF as a function of only neighboring nodes. <br><br>
@@ -347,7 +353,7 @@
     <center>
       <img src="figs/cbf.png"
       width="50%"
-      alt="algorithm structure"/>
+      alt="GCBF contour plot"/>
       <video width="40%" autoplay="" muted="" loop="">
         <source src="videos/cbf.mp4" type="video/mp4">
       </video>
@@ -409,19 +415,19 @@
         <img src="figs/env2d.png"
           class="center-image"
           width="100%"
-          alt="algorithm structure"/>
+          alt="Numerical results in 2D enviornments"/>
       </div>
       <div class="content">
         <img src="figs/env3d.png"
           class="center-image"
           width="100%"
-          alt="algorithm structure"/>
+          alt="Numerical results in 3D enviornments"/>
       </div>
       <div class="content">
         <img src="figs/obs.png"
           class="center-image"
           width="100%"
-          alt="algorithm structure"/>
+          alt="Numerical results in enviornments with obstacles"/>
       </div>
       <p align="center">
         The performance of GCBF+ and the baselines in 2D and 3D environments and environments with obstacles. 
@@ -440,8 +446,8 @@
     <div class="content">
       <div class="content has-text-justified">
         <p>
-          This work improves on our previous work <a href="https://mit-realm.github.io/gcbf-website/">GCBFv0</a>.
-
+          This work improves on our previous work <a href="https://mit-realm.github.io/gcbf-website/">GCBFv0</a>. <br>
+          The follow-up work <a href="https://mit-realm.github.io/dgppo/">DGPPO</a> extends GCBF for <b>safe multi-agent reinforcement learning</b>.<br>
           For a survey of the field of learning safe control for multi-robot systems, see <a rel="survey" href="https://arxiv.org/pdf/2311.13714.pdf">this paper</a>.
         </p>
       </div>
@@ -451,21 +457,21 @@
 </section>
 
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{TODO,
-author={TODO, TODO and TODO, TODO},
-journal={TODO},
-title={TODO},
-year={TODO},
-volume={TODO},
-number={TODO},
-pages={TODO},
-doi={TODO}}
+    <pre><code>@ARTICLE{gcbf+,
+      author={Zhang, Songyuan and So, Oswin and Garg, Kunal and Fan, Chuchu},
+      journal={IEEE Transactions on Robotics}, 
+      title={GCBF+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multi-Agent Control}, 
+      year={2025},
+      volume={},
+      number={},
+      pages={1-20},
+      doi={10.1109/TRO.2025.3530348}
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 <footer class="footer">
