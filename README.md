@@ -145,6 +145,21 @@ python test.py --env SingleIntegrator -n 16 --algo dec_share_cbf --epi 1 --area-
 
 We provide the pre-trained models in the folder [`pretrained`](pretrained).
 
+## Citation
+
+```
+@ARTICLE{zhang2025gcbf+,
+      author={Zhang, Songyuan and So, Oswin and Garg, Kunal and Fan, Chuchu},
+      journal={IEEE Transactions on Robotics}, 
+      title={GCBF+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multi-Agent Control}, 
+      year={2025},
+      volume={},
+      number={},
+      pages={1-20},
+      doi={10.1109/TRO.2025.3530348}
+}
+```
+
 ## Acknowledgement
 
 The developers were partially supported by MITRE during the project.
