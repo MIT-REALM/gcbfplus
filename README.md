@@ -22,6 +22,7 @@ A much improved version of [GCBFv0](https://mit-realm.github.io/gcbf-website/)!
 </div>
 
 ## Dependencies
+ume={41},
 
 We recommend to use [CONDA](https://www.anaconda.com/) to install the requirements:
 
@@ -151,11 +152,11 @@ We provide the pre-trained models in the folder [`pretrained`](pretrained).
 @ARTICLE{zhang2025gcbf+,
       author={Zhang, Songyuan and So, Oswin and Garg, Kunal and Fan, Chuchu},
       journal={IEEE Transactions on Robotics}, 
-      title={GCBF+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multi-Agent Control}, 
+      title={GCBF+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multiagent Control}, 
       year={2025},
-      volume={},
+      volume={41},
       number={},
-      pages={1-20},
+      pages={1533-1552},
       doi={10.1109/TRO.2025.3530348}
 }
 ```
