@@ -155,7 +155,6 @@ We provide the pre-trained models in the folder [`pretrained`](pretrained).
       title={{GCBF}+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multiagent Control}, 
       year={2025},
       volume={41},
-      number={},
       pages={1533-1552},
       doi={10.1109/TRO.2025.3530348}
 }
