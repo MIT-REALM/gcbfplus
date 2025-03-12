@@ -152,7 +152,7 @@ We provide the pre-trained models in the folder [`pretrained`](pretrained).
 @ARTICLE{zhang2025gcbf+,
       author={Zhang, Songyuan and So, Oswin and Garg, Kunal and Fan, Chuchu},
       journal={IEEE Transactions on Robotics}, 
-      title={GCBF+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multiagent Control}, 
+      title={{GCBF}+: A Neural Graph Control Barrier Function Framework for Distributed Safe Multiagent Control}, 
       year={2025},
       volume={41},
       number={},
