@@ -22,7 +22,6 @@ A much improved version of [GCBFv0](https://mit-realm.github.io/gcbf-website/)!
 </div>
 
 ## Dependencies
-ume={41},
 
 We recommend to use [CONDA](https://www.anaconda.com/) to install the requirements:
 
